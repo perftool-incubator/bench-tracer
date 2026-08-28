@@ -44,3 +44,17 @@ An example utilizing a k8s endpoint with cpu-partitioning and volumeMounts is in
 ## Tracepoint Support
 
 **--events** *takes a comma separated list of events in /sys/kernel/debug/tracing/osnoise (currently 'osnoise', 'irq_noise', 'nmi_noise', 'sample_threshold', 'softirq_noise' and 'thread_noise') and enables the tracepoint for any event in the list*
+
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `rickshaw.json` | Rickshaw integration: defines client scripts and parameter transformations |
+| `multiplex.json` | Parameter validation rules, unit conversions, and presets for multiplex |
+| `benchmark-metadata.json` | Machine-readable description and output file list (consumed by `crucible benchmarks list`) |
+| `tracer-base` | Base setup shared by other scripts |
+| `tracer-client` | Client-side execution: configures and runs osnoise/timerlat tracers |
+| `tracer-runtime` | Runtime extraction |
+| `tracer-post-process.py` | Post-processing script |
+| `workshop.json` | Engine image build requirements |
+

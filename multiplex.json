@@ -1,0 +1,50 @@
+{
+    "presets": {
+        "defaults": [
+            { "arg": "duration", "vals": ["60"] },
+            { "arg": "tracer", "vals": ["osnoise"] }
+        ]
+    },
+    "validations": {
+        "positive_integer": {
+            "description": "a whole number > 0",
+            "args": [
+                "duration",
+                "period",
+                "runtime"
+            ],
+            "vals": "^[1-9][0-9]*$"
+        },
+        "non_negative_integer": {
+            "description": "a whole number >= 0",
+            "args": [
+                "cpu",
+                "threshold",
+                "us_single",
+                "us_total"
+            ],
+            "vals": "^(0|[1-9][0-9]*)$"
+        },
+        "tracer_type": {
+            "description": "osnoise|timerlat",
+            "args": [
+                "tracer"
+            ],
+            "vals": "^(osnoise|timerlat)$"
+        },
+        "binary_flag": {
+            "description": "0|1",
+            "args": [
+                "stack"
+            ],
+            "vals": "^(0|1)$"
+        },
+        "string_value": {
+            "description": "a non-empty string",
+            "args": [
+                "events"
+            ],
+            "vals": "^.+$"
+        }
+    }
+}
